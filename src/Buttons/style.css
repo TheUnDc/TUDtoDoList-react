@@ -1,0 +1,30 @@
+
+.task__headerButtons {
+    border: none;
+    background-color: #ffffff;
+    color: #3c7681;
+    cursor: pointer;
+}
+  
+.task__headerButtons:hover {
+    color: #6c989b;
+}
+  
+.task__headerButtons:active {
+    color: #6c989b87;
+    transform: scale(0.98);
+}
+  
+.task__headerButtons:disabled {
+    color: #a9a8a8;
+    transform: scale(1);
+    cursor: default;
+}
+
+@media (max-width: 750px) {
+    .buttons__layout {
+        display: flex;
+        padding: 30px 0;
+        flex-direction: column;
+      }
+}

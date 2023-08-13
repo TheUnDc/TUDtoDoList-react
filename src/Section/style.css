@@ -23,7 +23,7 @@
 
 .section__content {
     margin: 0;
-    padding: 12px 0;
+    padding: 12px;
 }
 
 @media (max-width: 750px) {

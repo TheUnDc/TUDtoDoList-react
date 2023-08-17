@@ -58,9 +58,3 @@
 .task__content {
   padding: 0px 10px;
 }
-
-@media (max-width: 750px) {
-  .task__headerButtons {
-    padding: 5px 0;
-  }
-}

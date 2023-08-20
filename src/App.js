@@ -27,7 +27,16 @@ function App() {
   };
 
   const setAllDone = () => {
-    setTasks(tasks => tasks.map(task => ({...task, done: true})));
+    setTasks(tasks => tasks.map(task => ({ ...task, done: true })));
+  };
+
+  const addNewTask = (newTaskContent) => {
+    setTasks(tasks => [...tasks, {
+      content: newTaskContent,
+      done: false,
+      id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
+    },
+  ])
   };
 
   return (
@@ -37,7 +46,7 @@ function App() {
       />
       <Section
         title={`Dodaj nowe zadanie`}
-        specialAddons={<Form />}
+        specialAddons={<Form addNewTask={addNewTask} />}
       />
       <Section
         title={`Lista zadań`}
@@ -50,12 +59,12 @@ function App() {
           />
         }
         headerAddons={
-          <Buttons 
-            tasks={tasks} 
-            hideDone={hideDone} 
+          <Buttons
+            tasks={tasks}
+            hideDone={hideDone}
             toggleHideDone={toggleHideDone}
             setAllDone={setAllDone}
-            />
+          />
         }
       />
     </Container>

@@ -36,7 +36,7 @@ function App() {
       done: false,
       id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
     },
-  ])
+    ])
   };
 
   return (

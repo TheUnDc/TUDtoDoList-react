@@ -4,7 +4,7 @@ import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
 import Section from "./Section";
-import { useTasks, useHide } from "./useCustomState";
+import { useTasks, useHide } from "./useCustomHooks";
 
 function App() {
 

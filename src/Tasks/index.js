@@ -5,7 +5,7 @@ const Tasks = ({tasks, hideDone, removeTask, toggleTaskDone}) => (
         {tasks.map(task => (
             <Rendered 
             key={task.id} 
-            hide={task.done && hideDone}
+            $hide={task.done && hideDone}
             >
                 <Button
                     onClick={() => toggleTaskDone(task.id)}
@@ -14,13 +14,13 @@ const Tasks = ({tasks, hideDone, removeTask, toggleTaskDone}) => (
                 </Button>
 
                 <Content 
-                done={task.done}
+                $done={task.done ? 1 : 0}
                 className={`task__content ${task.done ? "task__done" : ""}`}>
                     {task.content}
                 </Content>
 
                 <Button 
-                    deleteMark 
+                    $deletemark
                     onClick={() => removeTask(task.id)} 
                 >
                         🗑

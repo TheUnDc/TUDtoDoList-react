@@ -23,7 +23,7 @@ const Button = styled.button`
             box-shadow: 3px 2px 50px -16px #2d5d2d;
             background-color: #2d5d2d;
         }
-    ${({ deleteMark }) => deleteMark && css`
+    ${({ $deletemark }) => $deletemark && css`
             background-color: crimson;
 
         &:hover {
@@ -47,7 +47,7 @@ const Rendered = styled.li`
 	padding: 20px;
 	border-bottom: 1px solid #ededed;
 
-    ${({ hide }) => hide && css`
+    ${({ $hide }) => $hide && css`
         display: none;
     `}
 `;
@@ -57,7 +57,7 @@ const Content = styled.span`
         display: flex;
         align-items: center;
 
-    ${({ done }) => done && css`
+    ${({ $done }) => $done && css`
         text-decoration: line-through; 
     `}
 `;

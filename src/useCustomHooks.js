@@ -8,6 +8,8 @@ export const useTasks = () => {
       localStorage.setItem("tasks", JSON.stringify(tasks)) /* "tasks" (tasks) [tasks] AND "hide" (hide) [hide]*/
     }, [tasks]);
   
+
+    
     const removeTask = (id) => {
       setTasks(tasks => tasks.filter(task => task.id !== id));
     };

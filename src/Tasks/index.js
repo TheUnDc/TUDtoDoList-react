@@ -20,7 +20,7 @@ const Tasks = ({tasks, hideDone, removeTask, toggleTaskDone}) => (
                 </Content>
 
                 <Button 
-                    $deletemark
+                    deletemark
                     onClick={() => removeTask(task.id)} 
                 >
                         🗑

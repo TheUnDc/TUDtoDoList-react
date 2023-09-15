@@ -1,32 +1,28 @@
 import { useState, useEffect } from "react";
 
-export const useTasks = (storageItem, alternative) => {
+export const useTasks = () => {
 
-    const storageCheck = () => JSON.parse(localStorage.getItem(storageItem)) || alternative; /*("tasks") || [] AND ("hide") || false*/
-    const [state, setState] = useState(storageCheck); /* state, setState*/
+    const storageTasksCheck = () => JSON.parse(localStorage.getItem("tasks")) || []; /*("tasks") || [] AND ("hide") || false*/
+    const [tasks, setTasks] = useState(storageTasksCheck); /* state, setState*/
     
     useEffect(() => {
-      localStorage.setItem(storageItem, JSON.stringify(state)) /* "tasks" (tasks) [tasks] AND "hide" (hide) [hide]*/
-    }, [state, storageItem]);
-  
-    const toggleHideDone = () => {
-      setState(hideDone => !hideDone);
-    };
+      localStorage.setItem("tasks", JSON.stringify(tasks)) /* "tasks" (tasks) [tasks] AND "hide" (hide) [hide]*/
+    }, [tasks]);
   
     const removeTask = (id) => {
-      setState(tasks => tasks.filter(task => task.id !== id));
+      setTasks(tasks => tasks.filter(task => task.id !== id));
     };
   
     const toggleTaskDone = (id) => {
-      setState(tasks => tasks.map(task => task.id === id ? { ...task, done: !task.done } : task));
+      setTasks(tasks => tasks.map(task => task.id === id ? { ...task, done: !task.done } : task));
     };
   
     const setAllDone = () => {
-      setState(tasks => tasks.map(task => ({ ...task, done: true })));
+      setTasks(tasks => tasks.map(task => ({ ...task, done: true })));
     };
   
     const addNewTask = (newTaskContent) => {
-      setState(tasks => [...tasks, {
+      setTasks(tasks => [...tasks, {
         content: newTaskContent,
         done: false,
         id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
@@ -34,7 +30,7 @@ export const useTasks = (storageItem, alternative) => {
       ])
     };
   
-    return ([state, toggleHideDone, removeTask, toggleTaskDone, setAllDone, addNewTask]);
+    return ([tasks,removeTask, toggleTaskDone, setAllDone, addNewTask]);
   
 };
 

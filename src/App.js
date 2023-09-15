@@ -14,9 +14,9 @@ function App() {
     toggleTaskDone,
     setAllDone,
     addNewTask,
-  ] = useTasks("tasks", []);
+  ] = useTasks();
 
-  const [hideDone, toggleHideDone] = useTasks("hide", false);
+  const [hideDone, toggleHideDone] = useHide();
 
   return (
     <Container>

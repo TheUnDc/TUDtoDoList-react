@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import styled from "styled-components";
+import { theme } from "../theme";
 
 export const SectionWrapper = styled.section`
         border-bottom: 10px solid #ededed;
@@ -14,12 +15,12 @@ export const HeaderMain = styled.header`
         margin: 0;
         padding: 15px;
 
-    @media (max-width: 750px) {
+    @media ${theme.breakpoint.mobileMaxi} {
         display: flex;
         flex-direction: column;
         text-align: center;
     } 
-    @media (max-width: 1100px) and (min-width: 751px) {
+    @media ${theme.breakpoint.mobileMiddle} {
         display: flex;
         flex-direction: row;
         text-align: end;

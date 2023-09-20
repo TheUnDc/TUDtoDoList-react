@@ -1,15 +1,16 @@
 import styled from "styled-components";
+import { theme } from "../theme";
 
 export const FormWrapper = styled.form`
         display:flex;
         justify-content: space-between;
     
-    @media (max-width: 750px) {
+    @media ${theme.breakpoint.mobileMaxi} {
         display:flex;
         flex-direction: column;
         justify-content: space-between;
     }
-    @media (max-width: 1100px) and (min-width: 751px) {
+    @media ${theme.breakpoint.mobileMiddle} {
         display: flex;
         padding: 10px;
         flex-direction: column;
